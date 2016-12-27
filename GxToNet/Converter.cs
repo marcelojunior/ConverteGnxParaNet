@@ -9,10 +9,13 @@ namespace GxToNet
 {
     public class Converter
     {
-        string CodigoConvertido = "";
         string PadraTodosCaracteres = @"([\w\s\>\<\=\!\d\.\,\(\)\&]*)";
-        public string CodigoGnxOriginal { get; set; } 
-        public string CodigoNetOriginal { get; set; }
+        public XPZ XPZ;
+
+        public Converter(XPZ xpz)
+        {
+            this.XPZ = xpz;
+        }
 
         public void Iniciar()
         {
