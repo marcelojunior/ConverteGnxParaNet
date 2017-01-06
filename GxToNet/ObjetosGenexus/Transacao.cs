@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace GxToNet.ObjetosGenexus
 {
-    public class TabelaColuna
+    public class Transacao
     {
         public string Nome { get; set; }
-        public bool PermiteNulo { get; set; }
-        public Atributo Atributo { get; set; }
+        public string Descricao { get; set; }
+        public string Pasta { get; set; }
     }
 }

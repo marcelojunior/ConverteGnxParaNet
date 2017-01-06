@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GxToNet.DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,7 +26,8 @@ namespace GxToNet
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var XPZ = new XPZ(txtCaminho.Text);
+            var conexao = new Conexao(txtDatabase.Text, txtHost.Text, txtUser.Text, txtSenha.Text);
+            var XPZ = new XPZ(txtCaminho.Text, conexao);
             converter = new Converter(XPZ);
             converter.Iniciar();
         }
@@ -38,6 +40,11 @@ namespace GxToNet
         private void openFile_FileOk(object sender, CancelEventArgs e)
         {
             txtCaminho.Text = openFile.FileName;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

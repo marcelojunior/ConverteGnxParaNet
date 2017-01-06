@@ -7,6 +7,10 @@ namespace GxToNet.ObjetosGenexus
 {
     public enum TipoAtributo
     {
-        Texto, Data
+        Texto, Data,
+        SmallInt,
+        Decimal,
+        Inteiro,
+        Long
     }
 }

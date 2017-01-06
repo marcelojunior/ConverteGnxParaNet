@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Converter.cs" />
+    <Compile Include="DAL\Conexao.cs" />
     <Compile Include="Extensions\XmlNodeExtension.cs" />
     <Compile Include="fmrPrincipal.cs">
       <SubType>Form</SubType>
@@ -57,6 +58,7 @@
     <Compile Include="ObjetosGenexus\TabelaChave.cs" />
     <Compile Include="ObjetosGenexus\TabelaColuna.cs" />
     <Compile Include="ObjetosGenexus\TipoAtributo.cs" />
+    <Compile Include="ObjetosGenexus\Transacao.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servicos\CarregarObjetosGenexus.cs" />

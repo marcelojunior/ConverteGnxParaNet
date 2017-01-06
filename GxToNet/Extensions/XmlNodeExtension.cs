@@ -9,7 +9,7 @@ namespace GxToNet.Extensions
 {
     public static class XmlNodeExtension
     {
-        public static int ParseInt(this XmlNode _node, string xpath)
+        public static int GetInt(this XmlNode _node, string xpath)
         {
             var node = _node.SelectSingleNode(xpath);
             var valor = 0;
@@ -19,7 +19,7 @@ namespace GxToNet.Extensions
             return valor;
         }
 
-        public static string Texto(this XmlNode _node, string xpath)
+        public static string GetString(this XmlNode _node, string xpath)
         {
             return _node.SelectSingleNode(xpath).InnerText;
         }
