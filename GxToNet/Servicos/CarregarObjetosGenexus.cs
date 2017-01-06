@@ -39,7 +39,7 @@ namespace GxToNet.Servicos
 
             return atributos;
         }
-
+        
         private TipoAtributo _selecionaTipoAtributo(XmlNode item)
         {
             var tipo = TipoAtributo.Texto;
@@ -54,6 +54,58 @@ namespace GxToNet.Servicos
             
 
             return tipo;
+        }
+
+        internal string CarregaNameSpace()
+        {
+            var name = xpz.documento.SelectSingleNode("/ExportFile/GXObject/Folder/Info/Name").InnerText;
+            var folder = xpz.documento.SelectSingleNode("/ExportFile/GXObject/Folder/Info/Folder").InnerText;
+            return string.Format("{0}.{1}", folder, name);
+        }
+
+        internal string CarregaNomeTransacao()
+        {
+            var nomeTransacao = "";
+            var node = xpz.documento.SelectSingleNode("/ExportFile/GXObject/Transaction");
+
+            if (node != null)
+            {
+                nomeTransacao = node.SelectSingleNode("Info/Name").InnerText;
+            }
+
+            return nomeTransacao;
+        }
+
+        internal List<Tabela> CarregaTabelas()
+        {
+            var tabelas = new List<Tabela>();
+            var xmlTabelas = xpz.documento.SelectNodes("/ExportFile/GXObject/Table", nsmgr);
+            foreach (XmlNode item in xmlTabelas)
+            {
+                var tabela = new Tabela();
+                tabela.Id = item.ParseInt("Id");
+                tabela.Nome = item.Texto("Info/Name");
+                tabela.Descricao = item.Texto("Info/Description");
+                tabela.Chaves = _CarregaChavesTabela(item);
+
+                tabelas.Add(tabela);
+            }
+            return tabelas;
+        }
+
+        private List<TabelaChave> _CarregaChavesTabela(XmlNode node)
+        {
+            var chaves = new List<TabelaChave>();
+            var xmlChaves = node.SelectNodes("Key", nsmgr);
+            foreach (XmlNode item in xmlChaves)
+            {
+                var chave = new TabelaChave();
+                chave.Nome = item.InnerText;
+
+                chaves.Add(chave);
+            }
+
+            return chaves;
         }
     }
 }

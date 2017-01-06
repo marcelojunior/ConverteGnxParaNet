@@ -53,6 +53,9 @@
       <DependentUpon>fmrPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="ObjetosGenexus\Atributo.cs" />
+    <Compile Include="ObjetosGenexus\Tabela.cs" />
+    <Compile Include="ObjetosGenexus\TabelaChave.cs" />
+    <Compile Include="ObjetosGenexus\TabelaColuna.cs" />
     <Compile Include="ObjetosGenexus\TipoAtributo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

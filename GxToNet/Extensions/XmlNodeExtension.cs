@@ -18,5 +18,10 @@ namespace GxToNet.Extensions
 
             return valor;
         }
+
+        public static string Texto(this XmlNode _node, string xpath)
+        {
+            return _node.SelectSingleNode(xpath).InnerText;
+        }
     }
 }

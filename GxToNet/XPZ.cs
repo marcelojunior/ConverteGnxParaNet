@@ -15,6 +15,9 @@ namespace GxToNet
         public XmlDocument XML { get; set; }
         public XmlNode documento { get; set; }
         public List<Atributo> Atributos { get; set; }
+        public List<Tabela> Tabelas { get; set; }
+        public string NameSpace { get; set; }
+        public string NomeTransacao { get; set; }
 
         private CarregarObjetosGenexus sGenexus;
 
@@ -27,6 +30,9 @@ namespace GxToNet
             this.sGenexus = new CarregarObjetosGenexus(this);
 
             this.Atributos = sGenexus.CarregaAtributos();
+            this.NameSpace = sGenexus.CarregaNameSpace();
+            this.NomeTransacao = sGenexus.CarregaNomeTransacao();
+            this.Tabelas = sGenexus.CarregaTabelas();
         }
 
         public void CarregarXML()
