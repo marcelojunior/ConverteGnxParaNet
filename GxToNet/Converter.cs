@@ -19,6 +19,7 @@ namespace GxToNet
 
         public void Iniciar()
         {
+
             this.MetodosPrivados();
             this.IfsComElse();
         }

@@ -40,14 +40,14 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 13);
+            this.label1.Size = new System.Drawing.Size(126, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Selecione o arquivo XPZ";
+            this.label1.Text = "Selecione o arquivo XML";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // openFile
             // 
-            this.openFile.Filter = "XPZ|*.xpz";
+            this.openFile.Filter = "XML|*.xml";
             this.openFile.FileOk += new System.ComponentModel.CancelEventHandler(this.openFile_FileOk);
             // 
             // txtCaminho
